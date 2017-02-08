@@ -3,12 +3,9 @@ require './app/command'
 class CommandReport < Command
 
   def execute
-    begin
-      puts output
-      true
+    puts output
+    true
     rescue RobotException => e
-      false
-    end
   end
 
   def unexecute

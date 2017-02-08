@@ -107,7 +107,7 @@ describe Robot do
       facing = RobotFacing.new(name: 'NORTH')
 
       lambda { robot.place_on(nil, facing) }.must_raise RobotException
-      assert_nil robot.place_off!
+      assert robot.place_off!
       lambda { robot.move_forward }.must_raise RobotException
       lambda { robot.move_back }.must_raise RobotException
       lambda { robot.turn_left }.must_raise RobotException
@@ -120,7 +120,7 @@ describe Robot do
       table = RobotTable.new(x: 6, y: 5)
 
       lambda { robot.place_on(table, nil) }.must_raise RobotException
-      assert_nil robot.place_off!
+      assert robot.place_off!
       lambda { robot.move_forward }.must_raise RobotException
       lambda { robot.move_back }.must_raise RobotException
       lambda { robot.turn_left }.must_raise RobotException
@@ -136,7 +136,7 @@ describe Robot do
       table = RobotTable.new(x: 6, y: 5)
       facing = RobotFacing.new(name: 'NORTH')
 
-      assert_nil robot.place_off!
+      assert robot.place_off!
       lambda { robot.place_on(table, facing) }.must_raise RobotException
       lambda { robot.move_forward }.must_raise RobotException
       lambda { robot.move_back }.must_raise RobotException

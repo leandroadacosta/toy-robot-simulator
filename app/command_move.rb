@@ -3,21 +3,13 @@ require './app/command'
 class CommandMove < Command
 
   def execute
-    begin
-      @robot.move_forward
-      true
+    @robot.move_forward
     rescue RobotException => e
-      false
-    end
   end
 
   def unexecute
-    begin
-      @robot.move_back
-      true
+    @robot.move_back
     rescue RobotException => e
-      false
-    end
   end
 
 end

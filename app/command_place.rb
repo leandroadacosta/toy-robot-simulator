@@ -5,23 +5,15 @@ require './app/robot_facing'
 class CommandPlace < Command
 
   def execute
-    begin
-      table = RobotTable.new(x: params[0], y: params[1])
-      facing = RobotFacing.new(name: params[2])
-      @robot.place_on(table, facing)
-      true
+    table = RobotTable.new(x: params[0], y: params[1])
+    facing = RobotFacing.new(name: params[2])
+    @robot.place_on(table, facing)
     rescue RobotException => e
-      false
-    end
   end
 
   def unexecute
-    begin
-      @robot.place_off!
-      true
+    @robot.place_off!
     rescue RobotException => e
-      false
-    end
   end
 
   private

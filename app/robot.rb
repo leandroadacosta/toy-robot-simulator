@@ -7,35 +7,41 @@ class Robot
     @facing = facing
     check_attributes
     check_validations
+    true
   end
 
   def place_off!
     @place = nil
     @facing = nil
+    true
   end
 
   def move_forward
     check_attributes
     @facing.move_one_unit_forward_of(@place)
     check_validations
+    true
   end
 
   def move_back
     check_attributes
     @facing.move_one_unit_back_of(@place)
     check_validations
+    true
   end
 
   def turn_left
     check_attributes
     @facing.rotate_left
     check_validations
+    true
   end
 
   def turn_right
     check_attributes
     @facing.rotate_right
     check_validations
+    true
   end
 
   def location
