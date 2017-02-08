@@ -1,0 +1,2 @@
+class RobotException < RuntimeError
+end
