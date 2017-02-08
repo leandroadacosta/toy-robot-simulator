@@ -1,6 +1,7 @@
-# How to run
+# How to
 
-Just run on console `ruby main.rb`.
+Run: `ruby main.rb`.  
+Test: `rake`.
 
 # Toy Robot Simulator
 
